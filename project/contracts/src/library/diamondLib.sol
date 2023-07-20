@@ -29,7 +29,7 @@ library diamondLib {
         _;
         s.initialized = 1;
     }
-
+   
     function cutFacet(facetCut calldata _facetCut) internal {
         // check that the caller is the ownership
         _checkOwnership();
@@ -182,8 +182,7 @@ library diamondLib {
     }
 
     function _init() internal initialize {
-        mainStorage storage s = _storage();
-        s.ownership = msg.sender;
+        _storage().ownership = msg.sender;
     }
 
     function _isContract(address Address) internal view returns (bool) {

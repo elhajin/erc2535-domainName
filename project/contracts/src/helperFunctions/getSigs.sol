@@ -11,4 +11,10 @@ contract helperFunctions {
     function getSignature(string memory nameAndParams) public pure returns (bytes4 sig) {
         sig = bytes4(abi.encodeWithSignature(nameAndParams));
     }
+    function getSignatures(string[] memory namesAndparams) public pure returns(bytes4[] memory sigs){
+        for (uint i;i<namesAndparams.length;i++){
+            bytes4 sig = getSignature(namesAndparams[i]);
+            sigs[i]= sig;
+        }
+    }
 }

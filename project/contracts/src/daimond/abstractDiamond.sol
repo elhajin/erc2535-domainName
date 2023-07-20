@@ -7,7 +7,7 @@ import "../helperFunctions/delegatecall.sol";
 abstract contract abstractDiamond is self, delegateCall {
     /**
      * @dev this abstract contract will contain all the immutable functions in the diamond contract;
-     * @dev the main Diamond contract should inherit from this contract ;
+     * @dev the main Diamond contract should inherit this contract ;
      */
 
     constructor() {
